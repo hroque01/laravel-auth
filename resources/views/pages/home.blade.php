@@ -2,7 +2,9 @@
 
 @section('content')
     <h1>Projects</h1>
-    <a href="{{ route("admin.project.create")}}">CREATE NEW PROJECT</a>
+    @auth
+        <a href="{{ route("admin.project.create")}}">CREATE NEW PROJECT</a>
+    @endauth
     <ul>
         @foreach ($projects as $project)
         <li>
