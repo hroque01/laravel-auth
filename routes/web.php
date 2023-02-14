@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MainController;
 
-Route::get('/', [MainController::class, 'home']);
+Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('project/show/{project}', [MainController::class, 'show'])->name('project.show');
 
 // Route::middleware(['auth', 'verified'])
@@ -18,6 +18,10 @@ Route::middleware([])
             ->name('project.create');
         Route::post('/project/store', [MainController::class, 'store'])
             ->name('project.store');
+
+        //DELETE
+        Route::get('/project/delete/{project}', [MainController::class, 'delete'])
+            ->name('project.delete');
     });
 
 

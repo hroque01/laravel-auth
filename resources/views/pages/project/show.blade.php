@@ -8,6 +8,11 @@
         <div> {{ $project -> description }} </div>
         <div> {{$project -> release_date}}</div>
         <div>Link: <a href="{{$project -> repo_link}}">Github</a></div>
+        @auth
+            <hr>
+            <a href="">EDIT</a> - <a href="{{ route('admin.project.delete')}}">DELETE</a>
+        @endauth
+        
     </div>
     
 
