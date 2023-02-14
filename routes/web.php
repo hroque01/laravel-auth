@@ -8,11 +8,14 @@ use App\Http\Controllers\MainController;
 Route::get('/', [MainController::class, 'home']);
 Route::get('project/show/{project}', [MainController::class, 'show'])->name('project.show');
 
-Route::middleware(['auth', 'verified'])
+// Route::middleware(['auth', 'verified'])
+Route::middleware([])
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
         // Route::get('/', [MainController::class, 'privateHome']);
+        Route::get('/project/create', [MainController::class, 'create'])->name('project.create');
+        Route::post('/project/store', [MainController::class, 'store'])->name('project.store');
     });
 
 
