@@ -20,7 +20,6 @@
     <input type="text" name="repo_link">
     <br>
     <input type="submit" value="CREATE NEW PROJECT">
-
 </form>
     
 

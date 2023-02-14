@@ -45,7 +45,7 @@ class MainController extends Controller
 
         $project->save();
 
-        return redirect()->route('pages.home');
+        return redirect()->route('project.show', $project);
     }
 
 // public function privateHome()
