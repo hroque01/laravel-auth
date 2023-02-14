@@ -31,13 +31,21 @@ class MainController extends Controller
             'name' => 'required|string|min:3|max:64|unique:projects',
             'description' => 'nullable|string',
             'main_image' => 'required|string|unique:projects',
-            'release date' => 'required|date|before:date',
+            'release_date' => 'required|date|before:date',
             'repo_link' => 'required|string|unique:projects',
         ]);
 
-        $project = Project::create($data);
+        $project = new Project();
 
-        return redirect()->route('project.show', $project);
+        $project->name = $data['name'];
+        $project->description = $data['description'];
+        $project->main_image = $data['main_image'];
+        $project->release_date = $data['release_date'];
+        $project->repo_link = $data['repo_link'];
+
+        $project->save();
+
+        return redirect()->route('pages.home');
     }
 
 // public function privateHome()

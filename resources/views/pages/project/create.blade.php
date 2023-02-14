@@ -2,7 +2,7 @@
 
 @section('content')
     
-<form method="POST" action="{{route('admin.project.create')}}">
+<form method="POST" action="{{ route('admin.project.store') }}">
     @csrf
     <label for="name">Name</label>
     <input type="text" name="name">

@@ -13,7 +13,7 @@ class Project extends Model
         'name',
         'description',
         'main_image',
-        'release date',
+        'release_date',
         'repo_link',
     ];
 }
