@@ -6,9 +6,12 @@
     <ul>
         @foreach ($projects as $project)
         <li>
-            <h2>{{ $project -> name  }}</h2>
-            <img class="pjImg" src="{{ $project -> main_image }}" alt="">
+            <a href="{{ route('project.show', $project)}}">
+                <h2>{{ $project -> name  }}</h2> 
+            </a>
+            <img class="pjImg" src="{{ $project -> main_image }}" alt="">s
             <div> {{ $project -> release_date }}</div>
+            
         </li>
             
         @endforeach

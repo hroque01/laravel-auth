@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'home']);
+Route::get('project/show/{project}', [MainController::class, 'show'])->name('project.show');
 
 Route::middleware(['auth', 'verified'])
     ->name('admin.')
